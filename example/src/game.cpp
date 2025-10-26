@@ -25,9 +25,13 @@ void Game::handle_events(SDL_Event event)
 
 			// Zoom In (Z) and Out (X)
 			if (event.key.keysym.sym == SDLK_z)
-				std::cout << "Zoom In!" << "\n";
+			{
+				test_camera->zoom += 0.01;
+			}
 			else if (event.key.keysym.sym == SDLK_x)
-				std::cout << "Zoom Out!" << "\n";
+			{
+				test_camera->zoom -= 0.01;
+			}
 		}
 	}
 }
@@ -99,7 +103,7 @@ Game::Game()
 		return ;
 	}
 
-	test_entity = new Entity(0, 0, 32, 32, 220, 200, 50);
+	test_entity = new Entity(0, 0, 64, 64, 220, 150, 150);
 	test_camera = new Camera2D(window);
 
 	running = true;

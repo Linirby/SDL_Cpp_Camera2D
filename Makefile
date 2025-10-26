@@ -14,7 +14,7 @@ $(OUT_DIR):
 	mkdir -p $(OUT_DIR)
 
 $(TARGET): $(SOURCES)
-	$(CXX) $(CXXFLAGS) $^ -o $@ $(LDFLAGS)
+	$(CXX) $(CXXFLAGS) $(EXAMPLE_INCLUDE) $^ -o $@ $(LDFLAGS)
 
 clean:
 	rm -rf $(OUT_DIR)

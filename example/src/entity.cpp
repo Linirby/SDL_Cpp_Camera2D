@@ -29,7 +29,7 @@ void Entity::render(SDL_Renderer *renderer, Camera2D *camera, float alpha)
 
 	render_pos = lerp_point(prev_pos, position, alpha);
 	render_pos = camera->world_to_screen_pos(render_pos);
-	render_rect = {render_pos.x, render_pos.y, (float)width, (float)height};
+	render_rect = {render_pos.x, render_pos.y, (float)width * camera->zoom, (float)height * camera->zoom};
 	SDL_SetRenderDrawColor(renderer, color.r, color.g, color.b, color.a);
 	SDL_RenderFillRectF(renderer, &render_rect);
 }
