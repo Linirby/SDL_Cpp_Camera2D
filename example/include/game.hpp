@@ -1,17 +1,19 @@
 #pragma once
 
 #include <SDL2/SDL.h>
+#include <vector>
 #include "entity.hpp"
 #include "camera.hpp"
 
 class Game
 {
 private:
-	SDL_Window		*window;
-	SDL_Renderer	*renderer;
+	SDL_Window				*window;
+	SDL_Renderer			*renderer;
 
-	Entity			*test_entity;
-	Camera2D		*test_camera;
+	std::vector<Entity *>	entities;
+	Camera2D				*test_camera;
+	int						target_entity;
 
 	bool			running;
 
